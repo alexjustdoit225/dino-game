@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0; 
+}
+body {
+    background-color: grey;
+}
+#canvas1 {
+    position: absolute;
+    background-color: azure;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 600px; 
+}
+
