@@ -25,10 +25,31 @@ class Dino {
 
 };
 
+class Obstacle {
+    constructor(){
+        this.width = 20; 
+        this.height = 20; 
+        this.x = canvas.width - this.width; 
+        this.y = canvas.height - this.height; 
+        this.color = "red";
+         
+    }
+    update() {
+
+    }
+    
+    draw() {
+        c.fillRect(this.x, this.y, this.width, this.height); 
+         
+    }
+}
+
 const dino = new Dino(); 
+const obstacles = new Obstacle(); 
 
 function animate() {
-    dino.draw();  
+    dino.draw(); 
+    obstacles.draw();   
     requestAnimationFrame(animate); 
 }
 animate(); 
