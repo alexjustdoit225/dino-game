@@ -11,7 +11,7 @@ class Dino {
         this.height = 50; 
         this.color = '#8338ec'; 
         this.x = 0; 
-        this.y = canvas.height - this.height; 
+        this.y = canvas.height - this.height;
     }
 
     update() {
@@ -20,36 +20,32 @@ class Dino {
 
     draw() {
         c.fillRect(this.x, this.y, this.width, this.height); 
-        c.fillStyle = this.color; 
     }
 
 };
 
 class Obstacle {
     constructor(){
-        this.width = 20; 
-        this.height = 20; 
-        this.x = canvas.width - this.width; 
-        this.y = canvas.height - this.height; 
-        this.color = "red";
-         
+        this.width = 20;
+        this.height = 20;
+        this.x = canvas.width - this.width;
+        this.y  = canvas.height - this.height;
+        this.color = 'red';
     }
-    update() {
 
-    }
-    
     draw() {
         c.fillRect(this.x, this.y, this.width, this.height); 
-         
     }
 }
-
 const dino = new Dino(); 
-const obstacles = new Obstacle(); 
+
+const block = new Obstacle(); 
 
 function animate() {
-    dino.draw(); 
-    obstacles.draw();   
+    c.fillStyle = dino.color; 
+    dino.draw();
+    c.fillStyle = block.color;  
+    block.draw();   
     requestAnimationFrame(animate); 
 }
 animate(); 
