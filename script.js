@@ -6,8 +6,8 @@ const CANVAS_WIDTH = canvas.width = 800;
 const CANVAS_HEIGHT = canvas.height = 500; 
 
 let obstacles = []; 
+let frame = 0; 
  
-
 class Dino {
     constructor() {
         this.width = 20; 
@@ -74,8 +74,13 @@ let interval = setInterval(animate(), 20);
 function stop() {
     clearInterval(interval); 
 }
-
+// does something at a given frame rate 
+function everyInterval(n) {
+    if ((frame / n ) % 1 == 0) {return true}
+    return false; 
+}
 function animate() {
+    let x, y; 
     if (dino.crashWith(block)) {
         stop(); 
     } else {
