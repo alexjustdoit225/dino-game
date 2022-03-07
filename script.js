@@ -5,6 +5,8 @@ const c = canvas.getContext('2d');
 const CANVAS_WIDTH = canvas.width = 800; 
 const CANVAS_HEIGHT = canvas.height = 500; 
 
+let obstacles = []; 
+
 class Dino {
     constructor() {
         this.width = 20; 
