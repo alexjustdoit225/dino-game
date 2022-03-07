@@ -80,17 +80,24 @@ function everyInterval(n) {
     return false; 
 }
 function animate() {
-    let x, y; 
-    if (dino.crashWith(block)) {
-        stop(); 
-    } else {
+    for (i = 0; i < obstacles.length; i += 1) {
+        if (dino.crashWith(obstacles[i])) {
+            stop(); 
+            return;
+        }
+    }
     c.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+    frame += 1; 
+    if (frame == 1 || everyInterval(150)) {
+        obstacles.push(new Obstacle()); 
+    }
+    for (i = 0; i < obstacles.length; i += 1) {
+        c.fillStyle = block.color;
+        obstacles[i].draw(); 
+        obstacles[i].move(); 
+    }
     c.fillStyle = dino.color; 
     dino.draw();
-    c.fillStyle = block.color;  
-    block.draw();
-    block.move();    
     requestAnimationFrame(animate); 
-    }
 }
 animate(); 
