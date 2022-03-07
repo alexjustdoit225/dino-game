@@ -34,7 +34,7 @@ class Obstacle {
     }
 
     move() {
-        
+        this.x --; 
     }
 
     draw() {
@@ -49,7 +49,8 @@ function animate() {
     c.fillStyle = dino.color; 
     dino.draw();
     c.fillStyle = block.color;  
-    block.draw();   
+    block.draw();
+    block.move();    
     requestAnimationFrame(animate); 
 }
 animate(); 
