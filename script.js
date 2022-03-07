@@ -46,6 +46,7 @@ const dino = new Dino();
 const block = new Obstacle(); 
 
 function animate() {
+    c.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     c.fillStyle = dino.color; 
     dino.draw();
     c.fillStyle = block.color;  
