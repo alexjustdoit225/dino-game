@@ -33,6 +33,10 @@ class Obstacle {
         this.color = 'red';
     }
 
+    move() {
+        
+    }
+
     draw() {
         c.fillRect(this.x, this.y, this.width, this.height); 
     }
