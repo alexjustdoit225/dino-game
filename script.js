@@ -15,6 +15,8 @@ class Dino {
         this.color = '#8338ec'; 
         this.x = 0; 
         this.y = canvas.height - this.height;
+        this.velocityY = 0; 
+        this.jumping = true;  
     }
 
     update() {
@@ -45,7 +47,10 @@ class Dino {
         }
     return crash;
     }
+  
+    
 };
+
 class Obstacle {
     constructor(){
         this.width = 20;
@@ -79,6 +84,9 @@ function everyInterval(n) {
     if ((frame / n ) % 1 == 0) {return true}
     return false; 
 }
+
+
+
 function animate() {
     for (i = 0; i < obstacles.length; i += 1) {
         if (dino.crashWith(obstacles[i])) {
@@ -100,4 +108,10 @@ function animate() {
     dino.draw();
     requestAnimationFrame(animate); 
 }
+
+// window.addEventListener('click', function(e){ 
+//     if ()
+// });
+
 animate(); 
+ 
